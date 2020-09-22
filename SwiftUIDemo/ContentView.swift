@@ -10,12 +10,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Text("Hello, World!").font(.largeTitle).background(Color.red).shadow(color: Color.blue, radius: 5, x: 5, y: 5)
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        //ContentView()
+        
+        //시뮬레이터 변경
+        /*
+        ContentView().previewDevice(PreviewDevice(rawValue: "iPhone SE")).previewDisplayName("IPHONE SE")
+        */
+        
+        Group {
+            ContentView().previewDevice(PreviewDevice(rawValue: "iPhone 11")).previewDisplayName("IPHONE 11")
+            
+            ContentView().previewDevice(PreviewDevice(rawValue: "iPhone SE")).previewDisplayName("IPHONE SE")
+        }
+        
     }
 }
